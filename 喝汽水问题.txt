@@ -1,0 +1,23 @@
+//作业标题
+//喝汽水问题
+//
+//作业内容
+//喝汽水，1瓶汽水1元，2个空瓶可以换一瓶汽水，给20元，可以多少汽水（编程实现）。
+
+int main()
+{
+	int money = 0;
+	int empty = 0;
+	int total = 0;
+	printf("请输入金额:>");
+	scanf("%d", &money);
+	total = money;
+	empty = money;
+	while (empty >= 2)
+	{
+		total += empty / 2;
+		empty = empty / 2 + empty % 2;
+	}
+	printf("可以兑换的汽水瓶数：%d\n",total);
+	return 0;
+}

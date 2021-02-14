@@ -1,0 +1,47 @@
+//将一个字符串str的内容颠倒过来，并输出。str的长度不超过100个字符。
+//
+//
+//
+//输入描述 :
+//输入一个字符串，可以有空格
+//
+//
+//
+//输出描述 :
+//输出逆序的字符串
+//
+//示例1
+//输入
+//I am a student
+//输出
+//tneduts a ma I
+
+#include <stdio.h>
+#include <string.h>
+
+void  reserve(char* str,int len)
+{
+	char* left = str;
+	char* right = str + len - 1;
+	while (left <= right)
+	{
+		char tmp = *left;
+		*left = *right;
+		*right = tmp;
+		left++;
+		right--;
+	}
+}
+
+
+
+int main()
+{
+	char arr[100] = {0};
+	gets(arr);
+	int len = strlen(arr);
+	reserve(arr,len);
+	printf("%s\n", arr);
+	return 0;
+
+}
